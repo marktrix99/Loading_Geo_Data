@@ -13,8 +13,6 @@ class GEODataAccess:
     def __init__(self, base_dir=None, series_id="GSE171485"):
         """
         Initialize GEO data access object.
-        
-        Args:
             base_dir (str): Local directory containing GEO files (None for remote access)
             series_id (str): GEO Series ID (e.g., "GSE171485")
         """
@@ -72,10 +70,10 @@ class GEODataAccess:
         """Read CSV file"""
         return pd.read_csv(file_path)
 
-# Primer:
+# Primer - izpis podatkov:
 if __name__ == "__main__":
     # Set the base directory where the files are located
-    base_dir = r"C:/Users/LENOVO/Documents/Uni/IJS/DataFile/"
+    base_dir = r"data_file"
     geo_access = GEODataAccess(base_dir=base_dir)
 
     # Load specific files
@@ -109,13 +107,13 @@ if __name__ == "__main__":
 
 
 # %%
-# Comparative table display function (polesna preglednost)
+# Comparative table display function (bolj pregledno za biologe)
 if __name__ == "__main__":
     # Set the base directory where the files are located
-    base_dir = r"C:/Users/LENOVO/Documents/Uni/IJS/DataFile/"
+    base_dir = r"DataFile/"
     geo_access = GEODataAccess(base_dir=base_dir)
 
-    # Function to display data in a clear table format
+    # Display data in a clear table format
     def display_data_tables():
         print("Family SOFT Metadata:")
         metadata_df = pd.DataFrame(list(family_soft['metadata'].items()), columns=['Key', 'Value'])
@@ -138,5 +136,6 @@ if __name__ == "__main__":
 
     # Call the function to display tables
     display_data_tables()
+
 
 
